@@ -55,7 +55,7 @@ h1 {
 /* Envelope */
 .envelope {
     position: relative;
-    width: 280px;
+    width: 480px;
     height: 180px;
     margin: 0 auto 40px;
     background: #fff;
@@ -138,4 +138,49 @@ h1 {
 @keyframes fadeIn {
     from { opacity: 0; transform: translateY(20px); }
     to { opacity: 1; transform: translateY(0); }
+}
+
+/* Photo entrance animation */
+.gallery img {
+    width: 260px;
+    height: 260px;
+    object-fit: cover;
+    border-radius: 20px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.25);
+    
+    opacity: 0;
+    transform: translateY(30px) scale(0.95);
+    animation: photoFade 1.5s ease forwards;
+    animation-delay: 0.5s;
+
+    transition: transform 0.5s ease, box-shadow 0.5s ease;
+}
+
+/* Slight floating effect (like memories drifting) */
+.gallery img:nth-child(1) {
+    animation: photoFade 1.5s ease forwards, floatPhoto 6s ease-in-out infinite;
+}
+
+.gallery img:nth-child(2) {
+    animation: photoFade 1.5s ease forwards 0.3s, floatPhoto 7s ease-in-out infinite;
+}
+
+/* Hover romantic glow */
+.gallery img:hover {
+    transform: scale(1.08) rotate(1deg);
+    box-shadow: 0 12px 35px rgba(255, 182, 193, 0.6);
+}
+
+/* Keyframes */
+@keyframes photoFade {
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+@keyframes floatPhoto {
+    0%   { transform: translateY(0px); }
+    50%  { transform: translateY(-10px); }
+    100% { transform: translateY(0px); }
 }
