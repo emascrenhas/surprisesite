@@ -1,43 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>For You ❤️</title>
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Romantic Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<!-- Background Music -->
+<audio autoplay loop>
+    <source src="song.mp3" type="audio/mpeg">
+</audio>
+
+<!-- Music Badge -->
+<div class="music-badge">🎵 Now Playing: Our Song</div>
+
+<!-- Stars Background -->
+<div class="stars"></div>
+
 <div class="container">
     <h1>Hi My Love 💕</h1>
     <p class="intro">I made this little corner of the internet just for you.</p>
 
-    <div class="letter">
-        <p>
-            From the moment you came into my life, things started feeling softer,
-            brighter, and a lot more meaningful. You make normal days feel special
-            and special days unforgettable ✨
-        </p>
-        <p>
-            I don’t say it enough, but I’m really grateful for you — for your smile,
-            your laugh, and all the little things that make you *you* 💖
-        </p>
+    <!-- Envelope Letter -->
+    <div class="envelope" onclick="openLetter()">
+        <div class="flap"></div>
+        <div class="letter">
+            <p>
+                From the moment you came into my life, things started feeling softer,
+                brighter, and a lot more meaningful. You make normal days feel special
+                and special days unforgettable ✨
+            </p>
+            <p>
+                I don’t say it enough, but I’m really grateful for you — for your smile,
+                your laugh, and all the little things that make you <b>you</b> 💖
+            </p>
+        </div>
     </div>
-   
+
     <h2>Our Memories 📸</h2>
 
     <div class="gallery">
-        <img src="photo1.png">
-        <img src="photo2.png">
-        <img src="photo3.png">
-        <img src="photo4.png">
+        <img src="photo1.png" alt="Memory 1">
+        <img src="photo2.png" alt="Memory 2">
+        <img src="photo3.png" alt="Memory 2">
+        <img src="photo4.png" alt="Memory 2">
     </div>
 
     <p class="end">I can’t wait to make many more memories with you 💫</p>
 </div>
 
-<audio id="bgMusic" loop>
-    <source src="song.mp3" type="audio/mpeg">
-</audio>
-
 <script>
-const music = document.getElementById("bgMusic");
+function openLetter() {
+    document.querySelector(".envelope").classList.toggle("open");
+}
 
-// Play music on first user interaction
-document.body.addEventListener("click", () => {
-    music.play();
-}, { once: true });
-
+/* Floating Hearts */
 function createHeart() {
     const heart = document.createElement("div");
     heart.classList.add("heart");
@@ -50,3 +71,6 @@ function createHeart() {
 }
 setInterval(createHeart, 500);
 </script>
+
+</body>
+</html>
