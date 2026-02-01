@@ -55,8 +55,8 @@ h1 {
 /* Envelope */
 .envelope {
     position: relative;
-    width: 480px;
-    height: 180px;
+    width: 580px;
+    height: 280px;
     margin: 0 auto 40px;
     background: #c9f7e8;
     border-radius: 10px;
