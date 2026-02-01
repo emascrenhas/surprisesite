@@ -1,0 +1,39 @@
+<div class="container">
+    <h1>Hi My Love 💕</h1>
+    <p class="intro">I made this little corner of the internet just for you.</p>
+
+    <div class="letter">
+        <p>
+            From the moment you came into my life, things started feeling softer,
+            brighter, and a lot more meaningful. You make normal days feel special
+            and special days unforgettable ✨
+        </p>
+        <p>
+            I don’t say it enough, but I’m really grateful for you — for your smile,
+            your laugh, and all the little things that make you *you* 💖
+        </p>
+    </div>
+
+    <h2>Our Memories 📸</h2>
+
+    <div class="gallery">
+        <img src="photo1.jpg" alt="Memory 1">
+        <img src="photo2.jpg" alt="Memory 2">
+    </div>
+
+    <p class="end">I can’t wait to make many more memories with you 💫</p>
+</div>
+
+<script>
+function createHeart() {
+    const heart = document.createElement("div");
+    heart.classList.add("heart");
+    heart.innerHTML = "💖";
+    heart.style.left = Math.random() * 100 + "vw";
+    heart.style.fontSize = (Math.random() * 10 + 15) + "px";
+    heart.style.animationDuration = (Math.random() * 3 + 4) + "s";
+    document.body.appendChild(heart);
+    setTimeout(() => heart.remove(), 6000);
+}
+setInterval(createHeart, 500);
+</script>
