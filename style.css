@@ -1,0 +1,23 @@
+.intro {
+    font-size: 20px;
+    margin-bottom: 20px;
+    color: #555;
+}
+
+.letter {
+    background: white;
+    padding: 25px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    margin: 20px auto;
+    max-width: 650px;
+    line-height: 1.7;
+    font-size: 17px;
+    color: #444;
+    text-align: left;
+}
+
+h2 {
+    margin-top: 40px;
+    color: #ff4d88;
+}
