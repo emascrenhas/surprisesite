@@ -71,14 +71,47 @@ h1 {
     background: #9fe6d0;
     transform-origin: top;
     transition: transform 0.6s ease;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
+
+.tap-hint {
+    font-size: 15px;
+    color: white;
+    font-weight: bold;
+    letter-spacing: 1px;
+    pointer-events: none; /* keeps flap clickable */
+    text-shadow: 0 2px 8px rgba(0,0,0,0.4);
+    animation: pulseHint 1.6s infinite ease-in-out;
+    text-align: center;
+}
+
+@keyframes pulseHint {
+    0% { transform: scale(1); opacity: 0.7; }
+    50% { transform: scale(1.08); opacity: 1; }
+    100% { transform: scale(1); opacity: 0.7; }
+
 
 .letter {
     position: absolute;
     width: 90%;
+    height: 75%;
     left: 5%;
-    top: 20%;
+    top: 15%;
+    background: #c9f7e8;
     color: #333;
+    padding: 25px;
+    box-sizing: border-box;
+    border-radius: 8px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;   /* vertical center */
+    align-items: center;       /* horizontal center */
+    text-align: center;        /* center text */
+
     opacity: 0;
     transition: opacity 0.5s ease 0.6s;
 }
@@ -184,26 +217,3 @@ h1 {
     50%  { transform: translateY(-10px); }
     100% { transform: translateY(0px); }
 }
-
-.flap {
-    position: relative; /* Needed so text positions inside flap */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.tap-hint {
-    font-size: 15px;
-    color: white;
-    font-weight: bold;
-    letter-spacing: 1px;
-    pointer-events: none; /* keeps flap clickable */
-    text-shadow: 0 2px 8px rgba(0,0,0,0.4);
-    animation: pulseHint 1.6s infinite ease-in-out;
-    text-align: center;
-}
-
-@keyframes pulseHint {
-    0% { transform: scale(1); opacity: 0.7; }
-    50% { transform: scale(1.08); opacity: 1; }
-    100% { transform: scale(1); opacity: 0.7; }
