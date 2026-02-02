@@ -316,7 +316,7 @@ h1 {
 .love-popup {
     position: fixed;
     inset: 0;
-    background: #86f0f0;
+    background: rgba(0,0,0,0.6);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -332,7 +332,7 @@ h1 {
 }
 
 .love-box {
-    background: white;
+    background: #86f0f0;
     padding: 30px 40px;
     border-radius: 20px;
     text-align: center;
