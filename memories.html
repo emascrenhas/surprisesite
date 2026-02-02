@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Us🫰💫</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+
+<body>
+
+<div class="love-popup" id="lovePopup">
+    <div class="love-box">
+        <h2>I Love You So Much🥹❤️</h2>
+        <p>You mean the world to me 🌍💖</p>
+        <button onclick="closeLove()">Close 💕</button>
+    </div>
+</div>
+
+<div class="stars"></div>
+<div class="petals"></div>
+  
+<div class="container">
+    <h1>Few sweet moments with you🫶🫂</h1>
+
+    <div class="gallery">
+
+        <div class="polaroid" onclick="togglePhoto(this)">
+            <div class="photo-flap">Tap to open🫶📸</div>
+            <img src="photo1.png">
+        </div>
+
+        <div class="polaroid" onclick="togglePhoto(this)">
+            <div class="photo-flap">Tap to open🫶📸</div>
+            <img src="photo2.png">
+        </div>
+
+        <div class="polaroid" onclick="togglePhoto(this)">
+            <div class="photo-flap">Tap to open🫶📸</div>
+            <img src="photo3.png">
+        </div>
+
+        <div class="polaroid" onclick="togglePhoto(this)">
+            <div class="photo-flap">Tap to open🫶📸</div>
+            <img src="photo4.png">
+        </div>
+
+    </div>
+
+    <p class="end">Every picture with you is my favorite memory 💖 <br> 
+      and I can’t wait to make many more memories with you🫰💫</p>
+</div>
+
+<script>
+function togglePhoto(el) {
+    el.classList.toggle("open");
+}
+
+function createPetal() {
+    const petal = document.createElement("div");
+    petal.classList.add("petal");
+    petal.style.left = Math.random() * window.innerWidth + "px";
+    petal.style.animationDuration = (6 + Math.random() * 6) + "s";
+    petal.style.opacity = 0.4 + Math.random() * 0.4;
+    document.querySelector(".petals").appendChild(petal);
+
+    setTimeout(() => petal.remove(), 12000);
+}
+
+setInterval(createPetal, 900);
+  
+</script>
+
+</body>
+</html>
+
+
+
+
+<!-- 
+   <h2>Few sweet moments with you🫶🫂</h2>
+
+    <div class="gallery">
+
+    <div class="photo-envelope" onclick="togglePhoto(this)">
+        <div class="photo-flap">Tap to open🫶📸</div>
+        <img src="photo1.png">
+    </div>
+
+    <div class="photo-envelope" onclick="togglePhoto(this)">
+        <div class="photo-flap">Tap to open🫶📸</div>
+        <img src="photo2.png">
+    </div>
+
+    <div class="photo-envelope" onclick="togglePhoto(this)">
+        <div class="photo-flap">Tap to open🫶📸</div>
+        <img src="photo3.png">
+    </div>
+
+    <div class="photo-envelope" onclick="togglePhoto(this)">
+        <div class="photo-flap">Tap to open🫶📸</div>
+        <img src="photo4.png">
+    </div>
+
+</div>
+
+    <p class="end">I can’t wait to make many more memories with you🫰💫</p>
+</div>
+-->
