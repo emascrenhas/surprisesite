@@ -8,10 +8,11 @@
     <!-- Romantic Google Font -->
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&display=swap" rel="stylesheet">
 </head>
+
 <body>
 
 <!-- Background Music -->
-<audio autoplay loop>
+<audio id="bg-music" loop>
     <source src="song.mp3" type="audio/mpeg">
 </audio>
 
@@ -44,8 +45,12 @@
             </p>
         </div>
     </div>
+    <button class="next-btn" onclick="goToMemories()">Click Here🫶📸</button>
 
-    <h2>Few sweet moments with you🫶🫂</h2>
+    <p class="end">More surprises ahead… 💫</p>
+</div> 
+<!-- 
+   <h2>Few sweet moments with you🫶🫂</h2>
 
     <div class="gallery">
 
@@ -73,14 +78,34 @@
 
     <p class="end">I can’t wait to make many more memories with you🫰💫</p>
 </div>
-
+-->
+    
 <script>
+
+const music = document.getElementById("bg-music");
+
+function startMusic() {
+    music.play().catch(() => {});
+    document.removeEventListener("click", startMusic);
+    document.removeEventListener("touchstart", startMusic);
+}
+
+// Start music on first interaction
+document.addEventListener("click", startMusic);
+document.addEventListener("touchstart", startMusic);
+
 function openLetter() {
     document.querySelector(".envelope").classList.toggle("open");
 }
-
+    
+<!--
 function togglePhoto(el) {
     el.classList.toggle("open");
+} 
+-->
+
+function goToMemories() {
+    window.location.href = "memories.html";
 }
     
 /* Floating Hearts */
