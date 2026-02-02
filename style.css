@@ -237,7 +237,7 @@ h1 {
 .polaroid {
     position: relative;
     width: 220px;
-    background: #D2E3EF;
+    background: #fdfaf6;
     padding: 10px 10px 35px 10px;
     border-radius: 6px;
     box-shadow: 0 10px 25px rgba(0,0,0,0.25);
@@ -332,11 +332,21 @@ h1 {
 }
 
 .love-box {
-    background: #86f0f0;
+    background: linear-gradient(135deg, #d4f1f4, #b8e0d2);
+    color: #2f4f4f;
     padding: 30px 40px;
     border-radius: 20px;
     text-align: center;
     animation: popIn 0.5s ease;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.25);
+}
+
+.love-box {
+    color: #b03060; /* romantic dark rose */
+}
+
+.love-box p {
+    color: #5a3a4a;
 }
 
 .love-box h2 {
@@ -346,12 +356,18 @@ h1 {
 
 .love-box button {
     margin-top: 15px;
-    padding: 8px 18px;
+    padding: 10px 22px;
     border: none;
-    border-radius: 20px;
-    background: #ff4d6d;
+    border-radius: 25px;
+    background: linear-gradient(135deg, #ff4d6d, #ff8fab);
     color: white;
     cursor: pointer;
+    font-weight: bold;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.love-box button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 5px 15px rgba(255, 77, 109, 0.4);
 }
 
 @keyframes popIn {
