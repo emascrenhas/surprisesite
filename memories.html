@@ -6,16 +6,11 @@
     <link rel="stylesheet" href="style.css">
 </head>
 
-
 <body>
 
-<div class="love-popup" id="lovePopup">
-    <div class="love-box">
-        <h2>I Love You So Much🥹❤️</h2>
-        <p>You mean the world to me 🌍💖</p>
-        <button onclick="closeLove()">Close 💕</button>
-    </div>
-</div>
+<audio autoplay loop id="bgMusic">
+    <source src="../song.mp3" type="audio/mpeg">
+</audio>
 
 <div class="stars"></div>
 <div class="petals"></div>
@@ -54,8 +49,22 @@
 <script>
 function togglePhoto(el) {
     el.classList.toggle("open");
+
+    // Check if all photos opened
+    const allPhotos = document.querySelectorAll(".polaroid");
+    const opened = document.querySelectorAll(".polaroid.open");
+
+    if (opened.length === allPhotos.length) {
+        setTimeout(() => {
+            document.getElementById("lovePopup").classList.add("show");
+        }, 800);
+    }
 }
 
+function closeLove() {
+    document.getElementById("lovePopup").classList.remove("show");
+}
+   
 function createPetal() {
     const petal = document.createElement("div");
     petal.classList.add("petal");
@@ -71,6 +80,23 @@ setInterval(createPetal, 900);
   
 </script>
 
+<div class="love-popup" id="lovePopup">
+    <div class="love-box">
+        <h2>I Love You So Much🥹❤️</h2>
+        <p>You mean the world to me 🌍💖</p>
+        <button onclick="closeLove()">Close 💕</button>
+    </div>
+</div>
+
+<script>
+document.addEventListener("click", () => {
+    const music = document.getElementById("bgMusic");
+    if (music.paused) {
+        music.play().catch(() => {});
+    }
+}, { once: true });
+</script>
+    
 </body>
 </html>
 
